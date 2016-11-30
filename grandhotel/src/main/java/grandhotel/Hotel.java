@@ -3,6 +3,6 @@ import java.util.*;
 
 public class Hotel { 
 	
-	List<Room> lista = new ArrayList<Room>();
+	List<Room> lista ;
 
 }

@@ -5,17 +5,45 @@ import java.util.Date;
 import java.util.List;
 
 public class Room { 
-	int nr; 
-	int capasity; 
-	private double price; 
-	List<Date> wolne = new LinkedList<Date>(); 
-	//dostêpnoœæ pokoju albo za pomoc¹ listy mapy albo setu zale¿nie od podejœcia
-	public double getPrice() {
-		return price;
+	long nr_r; 
+	public long getNr_r() {
+		return nr_r;
 	}
-	public void setPrice(double price) {
-		this.price = price;
-	} 
+
+	public void setNr_r(long nr_r) {
+		this.nr_r = nr_r;
+	}
+
+	public int getCena() {
+		return cena;
+	}
+
+	public void setCena(int cena) {
+		this.cena = cena;
+	}
+
+	public int getCapasity() {
+		return capasity;
+	}
+
+	public void setCapasity(int capasity) {
+		this.capasity = capasity;
+	}
+
+	int cena; 
+	int capasity; 
+	Zajetosc zajetosc;
+	
+	
+	public enum Zajetosc{
+		wolny, zajety
+	}
+
+	public Zajetosc getZajetosc() {
+		// TODO Auto-generated method stub
+		return zajetosc;
+	}
+	
 	
 
 }
