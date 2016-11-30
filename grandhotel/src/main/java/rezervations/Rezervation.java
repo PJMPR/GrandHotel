@@ -17,10 +17,11 @@ public class Rezervation {
 		this.gosc = gosc; 
 		cena_p=this.pokoj.getCena(); 
 		this.pokoj.getNr_r();
-		this.pokoj = pokoj;
 		this.start = start;
 		this.end = end; 
-		dni=this.pobyt(start, end);
+		dni=this.pobyt(start, end); 
+		naleznosc=zaplata( dni, cena_p);
+		
 		
 		
 	} 
@@ -29,13 +30,14 @@ public class Rezervation {
 	DateTime start;
 	DateTime end;  
 	int dni; 
-	int cena_p;
+	int cena_p; 
+	int naleznosc;
 	
 	public int pobyt(DateTime start, DateTime end){
 		return Days.daysBetween(start, end).getDays();
 	}  
 	
-	public int zapłata (int dni, int cena_p){
+	public int zaplata (int dni, int cena_p){
 		return dni*cena_p;
 	} 
 	
@@ -44,7 +46,15 @@ public class Rezervation {
 		if (this.pokoj.getZajetosc()==Zajetosc.wolny)
 		return true; 
 		else 
-			return false;
+			return false;  
+	}
+		
+		public boolean zajety(){  
+			
+			if (this.pokoj.getZajetosc()==Zajetosc.zajety)
+			return true; 
+			else 
+				return false;
 	}
 	
 	
