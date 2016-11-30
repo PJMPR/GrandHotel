@@ -1,12 +1,14 @@
 package rezervations;
 
+import org.joda.time.DateTime;
+
 public class Guest { 
-	int nr_k;
+	long nr_k;
 	String name; 
 	String surname; 
 	String email; 
 	String phone; 
-	String br_date;  
+	DateTime br_date;  
 	String adres; 
 	String card; 
 

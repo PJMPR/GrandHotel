@@ -1,21 +1,49 @@
 package grandhotel;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+
+
 
 public class Room { 
-	int nr; 
-	int capasity; 
-	private double price; 
-	List<Date> wolne = new LinkedList<Date>(); 
-	//dostêpnoœæ pokoju albo za pomoc¹ listy mapy albo setu zale¿nie od podejœcia
-	public double getPrice() {
-		return price;
+	long nr_r; 
+	public long getNr_r() {
+		return nr_r;
 	}
-	public void setPrice(double price) {
-		this.price = price;
-	} 
+
+
+
+
+	public void setNr_r(long nr_r) {
+		this.nr_r = nr_r;
+	}
+
+
+
+
+	public int getCena() {
+		return cena;
+	}
+
+
+
+
+	public void setCena(int cena) {
+		this.cena = cena;
+	}
+
+
+
+
+	int capasity; 
+	int cena;  
+	
+	
+	
+	
+	enum zajetosc{
+		wolny ,zajety
+	}
+	
 	
 
 }
