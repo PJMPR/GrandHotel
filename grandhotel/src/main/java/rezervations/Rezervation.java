@@ -3,28 +3,46 @@ package rezervations;
 import java.sql.Date;
 import java.util.*;
 
+import org.joda.time.*;
+
 import grandhotel.Room;
 
 
 public class Rezervation { 
 	Guest gosc; 
-	Room pokoj;  
-	Date data_przyjazdu;
-	Date data_wyjazdu; 
-	int dlugosc_pobytu;
-	
-	public int time_stay(Date data_przyjazdu, Date data_wyjazdu){
+	public Rezervation(Guest gosc, Room pokoj, DateTime start, DateTime end) {
+		super();
+		this.gosc = gosc; 
+		cena_p=this.pokoj.getCena(); 
+		this.pokoj.getNr_r();
+		this.pokoj = pokoj;
+		this.start = start;
+		this.end = end; 
+		dni=this.pobyt(start, end);
 		
-		int ST = 0;
-		return ST;
+		
 	} 
 	
-	public double cost(){
-		double p=this.pokoj.getPrice(); 
-		int S=this.time_stay(data_przyjazdu, data_wyjazdu);
-		double c=p*S; 
-		return c;
+	Room pokoj; 
+	DateTime start;
+	DateTime end;  
+	int dni; 
+	int cena_p;
+	
+	public int pobyt(DateTime start, DateTime end){
+		return Days.daysBetween(start, end).getDays();
+	}  
+	
+	public int zapłata (int dni, int cena_p){
+		return dni*cena_p;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
