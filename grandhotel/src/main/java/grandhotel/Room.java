@@ -32,9 +32,16 @@ public class Room {
 
 	int cena; 
 	int capasity; 
+	Zajetosc zajetosc;
 	
-	public enum zajetosc{
+	
+	public enum Zajetosc{
 		wolny, zajety
+	}
+
+	public Zajetosc getZajetosc() {
+		// TODO Auto-generated method stub
+		return zajetosc;
 	}
 	
 	
