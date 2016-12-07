@@ -2,7 +2,9 @@ package rezervations;
 
 import org.joda.time.*;
 
-public class Guest { 
+import model.IHaveId;
+
+public class Guest implements IHaveId { 
 	long nr_k;
 	public long getNr_k() {
 		return nr_k;
@@ -67,6 +69,14 @@ public class Guest {
 	public void setBr_date(DateTime br_date) {
 		this.br_date = br_date;
 	}
+	
+	public long getG_id() {
+		return g_id;
+	}
+
+	public void setG_id(long g_id) {
+		this.g_id = g_id;
+	}
 
 	String name; 
 	String surname; 
@@ -74,7 +84,13 @@ public class Guest {
 	String phone;   
 	String adres; 
 	String card; 
+	long g_id;
 	
+	
+
 	DateTime br_date;
+	public long getId() {
+		return g_id;
+	}
 
 }
