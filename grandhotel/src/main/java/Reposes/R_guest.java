@@ -8,7 +8,8 @@ import maper.IMapResultSetIntoEntity;
 import baza.IUnitOfWork;
 import rezervations.Guest;
 
-public class R_guest { 
+public class R_guest extends RepositoryBase<Guest>
+implements IR_guest { 
 	
 	
 	public PersonRepository(Connection connection,
@@ -43,11 +44,44 @@ public class R_guest {
 	protected void setupUpdate(Guest entity) throws SQLException {
 		update.setString(1, entity.getName());
 		update.setString(2, entity.getSurname());
-		update.setInt(3, entity.getId());
+		update.setLong(3, entity.getId());
 	}
-	public <Guest> List<Guest> withName(String name) {
-	// TODO Auto-generated method stub
-	return null;
+
+
+
+	public rezervations.Guest get(long g_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public List<rezervations.Guest> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void add(rezervations.Guest entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void update(rezervations.Guest entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void delete(rezervations.Guest entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public List<rezervations.Guest> withName(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
