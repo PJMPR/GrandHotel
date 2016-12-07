@@ -1,12 +1,10 @@
-package maper; 
+package maper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Reposes.IRepository;
-import domain.model.IHaveId;
+import Reposes.IReposytory;
+import model.IHaveId;
 
-public interface IMapResultSetIntoEntity<TEntity extends IHaveId> { 
-	
-	
+public interface IMapResultSetIntoEntity<TEntity extends IHaveId> {
+
 	public TEntity map(ResultSet rs) throws SQLException;
-
 }
