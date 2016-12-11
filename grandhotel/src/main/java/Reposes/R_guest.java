@@ -44,7 +44,11 @@ implements IR_guest {
 	protected void setupUpdate(Guest entity) throws SQLException {
 		update.setString(1, entity.getName());
 		update.setString(2, entity.getSurname());
+
 		update.setLong(3, entity.getId());
+
+		update.setLong(3, entity.getId());
+
 	}
 
 
