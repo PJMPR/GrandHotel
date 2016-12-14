@@ -1,5 +1,7 @@
 package rezervations;
 
+import java.util.List;
+
 import org.joda.time.*;
 
 import model.IHaveId;
@@ -84,13 +86,23 @@ public class Guest implements IHaveId {
 	String phone;   
 	String adres; 
 	String card; 
-	long g_id;
+	long g_id; 
+	
+	private List<Rezervation> rezerwacje;
 	
 	
 
 	DateTime br_date;
 	public long getId() {
 		return g_id;
+	}
+
+	public List<Rezervation> getRezerwacje() {
+		return rezerwacje;
+	}
+
+	public void setRezerwacje(List<Rezervation> rezerwacje) {
+		this.rezerwacje = rezerwacje;
 	}
 
 }
