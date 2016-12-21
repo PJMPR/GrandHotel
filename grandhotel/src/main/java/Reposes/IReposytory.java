@@ -8,5 +8,6 @@ public interface IReposytory<TEntity extends IHaveId> {
 	public List<TEntity> getAll();
 	public void add(TEntity entity);
 	public void update(TEntity entity);
-	public void delete(TEntity entity);
+	public void delete(TEntity entity); 
+	public int getMaxId();
 }

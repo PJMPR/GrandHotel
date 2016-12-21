@@ -92,6 +92,24 @@ public class Rezervation {
 	public void setNaleznosc(int naleznosc) {
 		this.naleznosc = naleznosc;
 	} 
+	
+	
+	
+	
+	public String StartToString() {
+		return "Rezervation [start=" + start + "]";
+	} 
+	
+	public String EndToString() {
+		return "Rezervation [end=" + end + "]";
+	} 
+	
+	
+	public long getNr_k() {
+		return gosc.nr_k;
+	}
+
+
 	int R_nr;
 	public Guest gosc;
 	Room pokoj; 
@@ -125,8 +143,10 @@ public class Rezervation {
 			return true; 
 			else 
 				return false;
-	}
-	
+	} 
+		
+		
+		
 	
 	
 	

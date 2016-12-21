@@ -2,6 +2,7 @@ package maper;
 
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
 import Reposes.IReposytory;
@@ -31,10 +32,10 @@ IReposytory<Guest> GuestRepo;
 		Rezervation Rezervation = new Rezervation(null, null, null, null, 0);// tu trzeba jeszcze coœ po wpisywaæ
 		Rezervation.setR_nr(rs.getInt("id"));
 		Rezervation.gosc.setG_id(rs.getInt("Guestid"));
-		Rezervation.setStart(rs.getTime("start"));
-		Rezervation.setCurrency(rs.getString("currency"));
+		//Rezervation.setStart(rs.getDate("start"));
+		//Rezervation.setCurrency(rs.getString("currency"));
 		if(GuestRepo!=null)
-		Rezervation.setGuest(this.GuestRepo.get(Rezervation.getGuestId()));
+		Rezervation.setGosc(this.GuestRepo.get(Rezervation.getGosc().getG_id()));
 		
 		return Rezervation;
 	}
