@@ -2,15 +2,17 @@ package rezervations;
 
 import java.sql.Date;
 
+
 import java.util.*;
 
 import org.joda.time.*;
 
 import grandhotel.Room;
-import grandhotel.Room.Zajetosc;
+import grandhotel.Room.Zajetosc; 
+import model.IHaveId;
 
 
-public class Rezervation { 
+public class Rezervation implements IHaveId { 
 	 
 	public Rezervation(Guest gosc, Room pokoj, DateTime start, DateTime end, int R_nr) {
 		super();
@@ -143,7 +145,12 @@ public class Rezervation {
 			return true; 
 			else 
 				return false;
-	} 
+	}
+
+		public long getId() {
+			// TODO Auto-generated method stub
+			return 0;
+		} 
 		
 		
 		
