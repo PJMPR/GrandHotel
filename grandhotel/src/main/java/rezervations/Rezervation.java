@@ -1,42 +1,31 @@
 package rezervations;
 
-import java.sql.Date;
-
-
-import java.util.*;
-
 import org.joda.time.*;
 
 import grandhotel.Room;
-import grandhotel.Room.Zajetosc; 
 import model.IHaveId;
 
 
 public class Rezervation implements IHaveId { 
-	 
-	public Rezervation(Guest gosc, Room pokoj, DateTime start, DateTime end, int R_nr) {
-		super();
-		this.pokoj = pokoj;
-		this.gosc = gosc; 
-		cena_p=this.pokoj.getCena(); 
-		this.pokoj.getNr_r();
-		this.start = start;
-		this.end = end; 
-		dni=this.pobyt(start, end); 
-		naleznosc=zaplata( dni, cena_p);  
-		this.R_nr= R_nr;
-		
-		
-		
-		
-	}
+
+	private long id;	
+	private Guest gosc;
+	private Room pokoj; 
+	private DateTime start;
+	private DateTime end;  
+	private int dni; 
+	private int cena_p;
+	private int naleznosc;  
+	private String numer; 
+	long l=gosc.getId();
+	long k=pokoj.getId();
 	
-	public int getR_nr() {
-		return R_nr;
+	public long getId() {
+		return id;
 	}
 
-	public void setR_nr(int r_nr) {
-		R_nr = r_nr;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Guest getGosc() {
@@ -93,73 +82,35 @@ public class Rezervation implements IHaveId {
 
 	public void setNaleznosc(int naleznosc) {
 		this.naleznosc = naleznosc;
-	} 
-	
-	
-	
-	
-	public String StartToString() {
-		return "Rezervation [start=" + start + "]";
-	} 
-	
-	public String EndToString() {
-		return "Rezervation [end=" + end + "]";
-	} 
-	
-	
-	public long getNr_k() {
-		return gosc.nr_k;
 	}
 
+	public String getNumer() {
+		return numer;
+	}
 
-	int R_nr;
-	public Guest gosc;
-	Room pokoj; 
-	DateTime start;
-	DateTime end;  
-	int dni; 
-	int cena_p; 
-	int naleznosc;
-	
-	
+	public void setNumer(String numer) {
+		this.numer = numer;
+	}	
 	
 	public int pobyt(DateTime start, DateTime end){
 		return Days.daysBetween(start, end).getDays();
-	}  
+	}   
 	
 	public int zaplata (int dni, int cena_p){
 		return dni*cena_p;
 	} 
 	
-	public boolean wolny(){  
-		
-		if (this.pokoj.getZajetosc()==Zajetosc.wolny)
-		return true; 
-		else 
-			return false;  
-	}
-		
-		public boolean zajety(){  
-			
-			if (this.pokoj.getZajetosc()==Zajetosc.zajety)
-			return true; 
-			else 
-				return false;
-	}
-
-		public long getId() {
-			// TODO Auto-generated method stub
-			return 0;
-		} 
-		
-		
-		
-	
-	
-	
-	
-	
-	
 	
 
+	public Long setGosc(long l) {
+		// TODO Auto-generated method stub
+		return gosc.getId();
+	}
+
+	public Long setPokoj(long k) {
+		// TODO Auto-generated method stub 
+		return pokoj.getId();
+		
+	}
+	
 }

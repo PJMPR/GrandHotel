@@ -3,8 +3,8 @@ package maper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Reposes.IReposytory;
 import model.IHaveId;
+import repo.IReposytory;
 
 public interface IMapResultSetIntoEntity<TEntity extends IHaveId> {
 
