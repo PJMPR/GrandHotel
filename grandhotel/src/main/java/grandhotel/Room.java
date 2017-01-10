@@ -1,18 +1,12 @@
 package grandhotel;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import model.IHaveId;
 
-public class Room { 
-	long nr_r; 
-	public long getNr_r() {
-		return nr_r;
-	}
-
-	public void setNr_r(long nr_r) {
-		this.nr_r = nr_r;
-	}
+public class Room implements IHaveId{ 
+	private long id; 
+	private int cena; 
+	private int capasity; 
+	
 
 	public int getCena() {
 		return cena;
@@ -30,18 +24,12 @@ public class Room {
 		this.capasity = capasity;
 	}
 
-	int cena; 
-	int capasity; 
-	Zajetosc zajetosc;
-	
-	
-	public enum Zajetosc{
-		wolny, zajety
+	public void setId(long id) {
+		this.id = id;
 	}
-
-	public Zajetosc getZajetosc() {
-		// TODO Auto-generated method stub
-		return zajetosc;
+	
+	public long getId() {
+		return id;
 	}
 	
 	

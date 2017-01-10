@@ -2,23 +2,22 @@ package grandhotel;
 
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
-import Reposes.R_Rez;
-import Reposes.R_ED;
-import Reposes.IRepositoryCatalog;
-import Reposes.R_guest;
-//import dao.HistoryLogRepository;
-import Reposes.ReposytoryCatalog;
-import maper.Rezervation_Mapper;
+import maper.RezervationMapper;
+import repo.IRepositoryCatalog;
+import repo.impl.ReposytoryCatalog;
+import repo.impl.RezervationRepository;
 //import dao.mappers.EnumDirectoryMapper;
 //import dao.mappers.HistoryLogMapper;
 import maper.IMapResultSetIntoEntity;
-import maper.Guest_Maper;
+import maper.GuestMaper;
 import baza.UnitOfWork;
 import rezervations.Guest;
+import rezervations.Rezervation;
 //import domain.model.EnumDictionary;
 //import domain.model.HistoryLog;
 import rezervations.Guest;
@@ -29,18 +28,20 @@ public class main {
 	public static void main(String[] args) {
 		
 		
-		String url = "jdbc:hsqldb:hsql://localhost/workdb";
+		String url = "jdbc:hsqldb:hsql:localhost/workdb";
     	try {
 			Connection connection = DriverManager.getConnection(url);
 			IRepositoryCatalog catalog = new ReposytoryCatalog(new UnitOfWork(connection), connection);
 			
+			
 			Guest janek = new Guest();
 			janek.setName("Jan");
 			janek.setSurname("Kowalski");
+			List<Guest> janki = catalog.guest().withName("janek");
+			catalog.guest().add(janek);
 			
-			catalog.people().add(janek);
 			
-			List<Guest> janki = catalog.people().withName("janek");
+			catalog.rezervation().add(newRezervation(janki.get(0), null));
 			
 	        System.out.println( "zapisuje janka" );
 			
@@ -54,6 +55,14 @@ public class main {
         System.out.println( "Koniec" );
         
     }
+	
+	private static Rezervation newRezervation(Guest guest, Room room) {
+		Rezervation rezervation = new Rezervation();
+		rezervation.setGosc(guest);
+		rezervation.setPokoj(room);
+		return rezervation;
+		
+	}
 
 	}
 
