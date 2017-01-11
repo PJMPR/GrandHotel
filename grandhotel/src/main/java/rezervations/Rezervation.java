@@ -17,11 +17,18 @@ public class Rezervation implements IHaveId {
 	private int cena_p;
 	private int naleznosc;  
 	private String numer; 
-	long l=gosc.getId();
-	long k=pokoj.getId();
+	//long l=gosc.getId();
+	//long k=pokoj.getId(); 
+	
+	//dni=pobyt(start,end); 
 	
 	public long getId() {
 		return id;
+	}
+
+	public Rezervation() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setId(long id) {
@@ -99,6 +106,8 @@ public class Rezervation implements IHaveId {
 	public int zaplata (int dni, int cena_p){
 		return dni*cena_p;
 	} 
+	
+	
 	
 	
 
