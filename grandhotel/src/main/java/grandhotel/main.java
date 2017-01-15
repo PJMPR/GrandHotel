@@ -28,7 +28,8 @@ public class main {
 	public static void main(String[] args) {
 		
 		
-		String url = "jdbc:hsqldb:hsql:localhost/workdb";
+		String url = "jdbc:hsqldb:hsql://localhost/workdb";
+		String url2 = "jdbc:hsqldb:mem:.";
     	try {
 			Connection connection = DriverManager.getConnection(url);
 			IRepositoryCatalog catalog = new ReposytoryCatalog(new UnitOfWork(connection), connection);
@@ -41,7 +42,7 @@ public class main {
 			catalog.guest().add(janek);
 			
 			
-			catalog.rezervation().add(newRezervation(janki.get(0), null));
+			//catalog.rezervation().add(newRezervation(janki.get(0), null));
 			
 	        System.out.println( "zapisuje janka" );
 			
