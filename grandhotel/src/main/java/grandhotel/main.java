@@ -29,7 +29,7 @@ import rezervations.Guest;
 public class main {
 
 	public static void main(String[] args) {
-		
+		// nic 2
 		
 		String url = "jdbc:hsqldb:hsql://localhost/workdb";
     	try {
