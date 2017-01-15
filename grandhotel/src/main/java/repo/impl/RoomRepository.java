@@ -49,17 +49,22 @@ public class RoomRepository extends RepositoryBase<Room> implements IRoomReposit
 	protected String insertSql() {
 		return "insert into room ("
 				+ "cena, "
-				+ "capasity) "
-				+ "values (?,?)";
+				+ "capasity"
+				+ ") "
+				+ "VALUES (?,?)";
 	}
 
 	@Override
 	protected String updateSql() {
 		// TODO Auto-generated method stub
-		return "update room room ("
+		return "update room set ("
 				+ "cena, "
 				+ "capasity) "
-				+ "values (?,?)";
-	}
+				+ "= (?,?)"
+				+ "where id=?";
+	} 
+	
+	
+	
 
 }
