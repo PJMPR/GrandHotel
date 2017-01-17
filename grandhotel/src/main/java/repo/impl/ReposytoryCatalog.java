@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import maper.RezervationMapper;
+import maper.RoomMapper;
 import repo.IRepositoryCatalog;
 import repo.IRepositoryGuest;
 import repo.IRezervationRepository;
@@ -40,7 +41,7 @@ public class ReposytoryCatalog implements IRepositoryCatalog{
 	}
 
 	public IRoomRepository room() {
-		return new RoomRepository(connection, null, uow);
+		return new RoomRepository(connection, new RoomMapper(), uow);
 	}
 
 	public IRezervationRepository rezervation() {

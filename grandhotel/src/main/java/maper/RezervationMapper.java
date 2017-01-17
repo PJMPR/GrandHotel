@@ -27,6 +27,7 @@ public class RezervationMapper implements IMapResultSetIntoEntity<Rezervation> {
 
 	public Rezervation map(ResultSet rs) throws SQLException {
 		Rezervation reservation = new Rezervation();
+		reservation.setId(rs.getLong("id"));
 		reservation.setDni(rs.getInt("dni"));
 		reservation.setGosc(guestRepo.get(rs.getLong("gosc_id")));
 		reservation.setPokoj(roomRepo.get(rs.getLong("room_id")));
