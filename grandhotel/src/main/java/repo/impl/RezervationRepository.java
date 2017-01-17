@@ -42,7 +42,7 @@ public class RezervationRepository extends RepositoryBase<Rezervation>
 				+ "dni int,"
 				+ "cena_p int ,"
 				+ "naleznosc int,"
-				+ "numer varchar(10)" 
+				+ "numer varchar(24)" 
 				+ ")";
 	}
 	@Override

@@ -38,8 +38,8 @@ public class main {
 			
 			
 			Guest janek = new Guest();
-			janek.setName("Jan");
-			janek.setSurname("Kowalski");
+			janek.setName("Agata");
+			janek.setSurname("Pieñkowska");
 			janek.setId(1);
 			List<Guest> janki = catalog.guest().withName("janek");
 			
@@ -49,16 +49,16 @@ public class main {
 			 System.out.println( janki.size() );
 				
 			Room pokoj = new Room(); 
-			pokoj.setId(1);
-			pokoj.setCena(300);
-			pokoj.setCapasity(3);
+			pokoj.setId(2);
+			pokoj.setCena(250);
+			pokoj.setCapasity(2);
 			
 			catalog.room().add(pokoj); 
 			 System.out.println( "zapisuje pokój" );
 			
 			
-			DateTime start = new DateTime(2017, 1, 7, 0, 0, 0);
-			DateTime end = new DateTime(2017, 1, 15, 0, 0, 0, 0);
+			DateTime start = new DateTime(2017, 4, 9, 0, 0, 0);
+			DateTime end = new DateTime(2017, 11, 1, 0, 0, 0, 0);
 			
 			
 			
@@ -82,6 +82,20 @@ public class main {
 			e.printStackTrace();
 		}
     	
+    	try {
+			Connection connection = DriverManager.getConnection(url);
+			IRepositoryCatalog catalog = new ReposytoryCatalog(new UnitOfWork(connection), connection);
+			for(Rezervation rezervation : catalog.rezervation().getAll()) {
+				System.out.println(rezervation.getId());
+			}
+			
+	        catalog.saveAndClose();
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    	
         System.out.println( "Koniec" );
         
     }
@@ -89,7 +103,9 @@ public class main {
 	private static Rezervation newRezervation(Guest guest, Room room,DateTime start,DateTime end) {
 		int k; 
 		int l;
-		int u;
+		int u; 
+		start=start.minusYears(1900);
+		end=end.minusYears(1900);
 		Rezervation rezervation = new Rezervation();
 		rezervation.setGosc(guest);
 		rezervation.setPokoj(room); 
@@ -101,7 +117,8 @@ public class main {
 		l=room.getCena(); 
 		rezervation.setCena_p(l); 
 		u=rezervation.zaplata(k,l); 
-		rezervation.setNaleznosc(u);
+		rezervation.setNaleznosc(u); 
+		rezervation.setNumer("rezer_1");
 		
 		
 		
