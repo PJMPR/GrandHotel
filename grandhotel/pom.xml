@@ -6,6 +6,7 @@
   <name>grandhotel</name> 
   
   
+  
 <dependencies>
 	<dependency>
     <groupId>joda-time</groupId>
@@ -31,6 +32,16 @@
 		<artifactId>javaee-web-api</artifactId>
 		<version>7.0</version>
 	</dependency>
-</dependencies>
+</dependencies> 
+<build>
+<plugins> 
+<plugin>
+ <groupId>org.eclipse.jetty</groupId>
+ <artifactId>jetty-maven-plugin</artifactId>
+ <version>9.3.7.v20160115</version>
+</plugin>
+
+</plugins>
+</build>
   
 </project>

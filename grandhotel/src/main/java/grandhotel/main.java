@@ -38,8 +38,8 @@ public class main {
 			
 			
 			Guest janek = new Guest();
-			janek.setName("Agata");
-			janek.setSurname("Pieñkowska");
+			janek.setName("lemmy");
+			janek.setSurname("kilmister");
 			janek.setId(1);
 			List<Guest> janki = catalog.guest().withName("janek");
 			
@@ -49,9 +49,9 @@ public class main {
 			 System.out.println( janki.size() );
 				
 			Room pokoj = new Room(); 
-			pokoj.setId(2);
-			pokoj.setCena(250);
-			pokoj.setCapasity(2);
+			pokoj.setId(3);
+			pokoj.setCena(2500);
+			pokoj.setCapasity(5);
 			
 			catalog.room().add(pokoj); 
 			 System.out.println( "zapisuje pokój" );
@@ -66,7 +66,6 @@ public class main {
 			catalog.rezervation().add(newRezervation(janki.get(0),pokoj, start,end)); 
 			
 			 System.out.println( "zapisuje rezerwacjê" );
-			
 			
 			
 			
