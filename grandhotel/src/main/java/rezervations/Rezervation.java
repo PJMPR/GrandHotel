@@ -2,6 +2,7 @@ package rezervations;
 
 import org.joda.time.*;
 
+
 import grandhotel.Room;
 import model.IHaveId;
 
@@ -75,7 +76,7 @@ public class Rezervation implements IHaveId {
 		this.dni = dni;
 	}
 
-	public int getCena_p() {
+	public int getCena_p() { 
 		return cena_p;
 	}
 
