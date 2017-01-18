@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import rezervations.Guest;
 
-@WebServlet("/guestServlet")
+@WebServlet("/addGuest")
 public class GuestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
