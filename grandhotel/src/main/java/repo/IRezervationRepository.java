@@ -10,5 +10,5 @@ import rezervations.Rezervation;
 import rezervations.Guest;
 
 public interface IRezervationRepository extends IReposytory<Rezervation>{
-	public List<Rezervation> byPerson(Guest guest);
+	public List<Rezervation> byGuest(Guest Guest);
 }
